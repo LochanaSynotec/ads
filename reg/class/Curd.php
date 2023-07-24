@@ -181,6 +181,28 @@
             return $e->getMessage();
         }
     }
+
+
+
+
+    public function fetchLastRow()
+{
+    try {
+        // Ensure that $this->tableName is correctly set in the constructor
+        if (empty($this->tableName)) {
+            throw new Exception("Table name is not set.");
+        }
+
+        // Fetch the last row from the specified table
+        $sql = "SELECT * FROM {$this->tableName} ORDER BY id DESC LIMIT 1";
+        $stm = $this->dbCnx->prepare($sql);
+        $stm->execute();
+        return $stm->fetch();
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
+
     
 
 }
