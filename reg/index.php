@@ -15,7 +15,7 @@
 
     <div class="container mt-3">
         <h2>Ad post</h2>
-        <form action="/action_page.php">
+        <form action="save.php" method="post">
             <div class="row">
                 <div class="col-sm-6 p-3">
 
