@@ -15,7 +15,7 @@
 
     <div class="container mt-3">
         <h2>Ad post</h2>
-        <form action="/action_page.php">
+        <form action="save.php" method="post">
             <div class="row">
                 <div class="col-sm-6 p-3">
 
@@ -36,7 +36,7 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="email">Description:</label>
-                        <textarea name="" class="form-control"  cols="30" rows="5" name="des"></textarea>
+                        <textarea  class="form-control"  cols="30" rows="5" name="des"></textarea>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="email">Tag (Key is searching )*:</label>
-                        <textarea name="" class="form-control"  cols="30" rows="5" name="tag"></textarea>
+                        <textarea  class="form-control"  cols="30" rows="5" name="tag"></textarea>
                     </div>
 
                 </div>
