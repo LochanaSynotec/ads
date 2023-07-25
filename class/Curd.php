@@ -203,6 +203,57 @@
     }
 }
 
-    
+ 
+function r($SEARCH_VAL)
+	{
+
+   
+
+		if ($SEARCH_VAL != '') {
+			$like_val = '';
+			$like_od_val = '';
+			$likke_arr = explode(' ', $SEARCH_VAL);
+			$likke_arr = array_map('trim', $likke_arr);
+			$likke_arr = array_filter($likke_arr);
+			$arr = count($likke_arr);
+			$arr = $arr - 1;
+
+			foreach ($likke_arr as $key => $value) {
+
+				if ($value == '') {
+
+				} else {
+					if ($key == $arr) {
+						$like_val .= 'all_tag LIKE\'%' . $value . '%\'';
+						$like_od_val .= 'all_tag LIKE\'%' . $value . '%\'';
+					} else {
+						$like_val .= 'all_tag LIKE\'%' . $value . '%\'OR ';
+						$like_od_val .= 'all_tag LIKE\'%' . $value . '%\'AND ';
+					}
+				}
+
+			}
+		}
+
+		
+			$sql = "SELECT * FROM ad WHERE  STATUS='ACTIVE' ORDER BY ID DESC";
+
+
+
+		$stm = $this->dbCnx->prepare($sql);
+        $stm->execute();
+        return $stm->fetch();
+				
+
+	}
+
+
+
+
+
+
+
+
+
 
 }
